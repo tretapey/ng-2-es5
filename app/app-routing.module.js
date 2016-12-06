@@ -5,7 +5,7 @@
         { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
         { path: 'dashboard',  component: app.DashboardComponent },
     //    { path: 'detail/:id', component: HeroDetailComponent },
-      //  { path: 'heroes',     component: HeroesComponent }
+        { path: 'heroes',     component: app.HeroesComponent }
     ];
 
     app.AppRoutingModule = 

@@ -10,8 +10,9 @@
         })
         .Class({
             constructor: function() {
-                this.heroService = {};
+                this.heroService;
             },
+            
             ngOnInit: function() {
                 this.heroes = [
                     {id: 1, name: 'HOLA'},

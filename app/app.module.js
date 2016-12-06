@@ -11,7 +11,8 @@
             ],
             declarations: [ 
                 app.AppComponent,
-                app.DashboardComponent
+                app.DashboardComponent,
+                app.HeroesComponent
             ],
             providers: [],
             bootstrap: [ app.AppComponent ]
