@@ -4,7 +4,7 @@
     var routes = [
         { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
         { path: 'dashboard',  component: app.DashboardComponent },
-    //    { path: 'detail/:id', component: HeroDetailComponent },
+        { path: 'detail/:id', component: app.HeroDetailComponent },
         { path: 'heroes',     component: app.HeroesComponent }
     ];
 
