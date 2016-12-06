@@ -5,15 +5,19 @@
         ng.core.Component({
             selector: 'my-heroes',
             templateUrl: 'app/templates/heroes.component.html',
-            styleUrls: ['app/styles/heroes.component.css']
+            styleUrls: ['app/styles/heroes.component.css'],
+            providers: []
         })
         .Class({
-            constructor: function() {
-                this.heroes;
-                this.selectedHero;
-                this.heroService;
-                this.router = ng.router.RouterModule;
-            },
+            constructor: [
+                ng.router.Router,
+                function(router) {
+                    this.router = router;
+
+                    this.heroes;
+                    this.selectedHero;
+                }
+            ],
             
             ngOnInit: function() {
                 this.getHeroes();
@@ -39,7 +43,7 @@
             },
 
             gotoDetail: function() {
-                //this.router.navigate(['/detail', this.selectedHero.id]);
+                this.router.navigate(['/detail', this.selectedHero.id]);
             }
 
         });
