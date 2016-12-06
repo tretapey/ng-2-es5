@@ -13,9 +13,10 @@
                 app.AppComponent,
                 app.DashboardComponent,
                 app.HeroesComponent,
-                app.HeroDetailComponent
+                app.HeroDetailComponent,
+                app.HeroSearchComponent
             ],
-            providers: [],
+            providers: [ app.HeroService ],
             bootstrap: [ app.AppComponent ]
         })
         .Class({

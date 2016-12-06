@@ -5,13 +5,14 @@
         ng.core.Component({
             selector: 'my-heroes',
             templateUrl: 'app/templates/heroes.component.html',
-            styleUrls: ['app/styles/heroes.component.css'],
-            providers: []
+            styleUrls: ['app/styles/heroes.component.css']
         })
         .Class({
             constructor: [
+                app.HeroService,
                 ng.router.Router,
-                function(router) {
+                function(heroService, router) {
+                    this.heroService = heroService;
                     this.router = router;
 
                     this.heroes;
@@ -24,10 +25,12 @@
             },
 
             getHeroes: function() {
-                this.heroes = [
-                    {id: 1, name: 'HOLA'},
-                    {id: 2, name: 'MUNDO'}
-                ];
+                var vm = this;
+
+                vm.heroService.getHeroes()
+                    .then(function(heroes) {
+                        vm.heroes = heroes;
+                    });
             },
 
             add: function(name) {
